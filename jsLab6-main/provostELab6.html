@@ -1,0 +1,100 @@
+<!-- provostELab6.html -->
+<!-- Eric Provost -->
+<!-- Simple webpage with a day night button, and a form for a user to fill out for being a potential study buddy. -->
+<!-- Last updated: 3/9/2025 -->
+
+<script></script>
+<html lang="en" class="entire">
+    <head id="head">
+        <!-- Adding the 3 scripts and stylesheet needed for this page to function. -->
+        <script src="scripts/dayNightBtn.js" defer></script>
+        <script src="scripts/footerWriter.js" defer></script>
+        <script src="scripts/StudyBuddy.js" defer></script>
+        <link rel="stylesheet" href="styles/dayMode.css" id="stylesheet">
+        <title>Main Page</title>
+    </head>
+
+    <body>
+        <header class="topNav" id="topNav">
+            <a>
+                <!-- This allows for the day night button with some neat wrapping in the top of the page. -->
+                <select id="modeBTN">
+                    <option value="day" id="day">Day Mode</option>
+                    <option value="night" id="night">Night Mode</option>
+                </select>
+            </a>
+        </header>
+
+        <header class="header" id="header">
+            <!-- h3 is where the results are written to. Additionally, where a head's up for the user will go if the form isn't filled out correctly. -->
+            <H1>Are you a good study buddy?</H1>
+            <h2>~~~~~~~~~~~~~~~~~~~~~~</h2>
+            <h3 id="resultID"></h3>
+        </header>
+
+        <body class="body" id="body">
+            <br><br>
+            <h2>
+                Your information below: 
+            </h2>
+            <br>
+            <form id="friendForm">
+                <!-- Oh boy, here we go. -->
+                <label for="friendNameID">Your Name</label>
+                <!-- Text input and pattern. Also autofocuses when the page is opened/refreshed. -->
+                <input type="text" name="friendName" id="friendNameID" placeholder="Jack" pattern="[a-z0-9._%+\-]" autofocus required>
+
+                <br><br>
+
+                <!-- Selection for the user's preferred contact type. Changes the textArea after it to fit with the user's selection. -->
+                <label for="friendContactTypeID">Preferred Contact Method</label>
+                <select name="friendContactType" id="friendContactTypeID">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="text">Text</option>
+                    <option value="bird">By Bird</option>
+                </select>
+
+                <br><br>
+
+                <!-- Textarea for contact information. Also where autocomplete and required are used. -->
+                <label for="friendContactID" id="friendContactLabelID">Email Address</label>
+                <textarea type="text" name="friendContact" id="friendContactID" placeholder="jackryan@gmail.com" autocomplete="email" required></textarea>
+                <br>
+
+                <!-- Interest checkboxes, also where novalidate is used as the user can select none of them and it's perfectly fine (still a little weird). -->
+                <p>Check all that interest you below: </p>
+                    <form id="friendInterestForm" novalidate>
+                        <label for="friendInterest0ID">Gaming</label>
+                        <input type="checkbox" name="friendInterest0" id="friendInterest0ID" value="gaming"><br>
+                        <label for="friendInterest1ID">Reading</label>
+                        <input type="checkbox" name="friendInterest1" id="friendInterest1ID" value="reading"><br>
+                        <label for="friendInterest2ID">Sports</label>
+                        <input type="checkbox" name="friendInterest2" id="friendInterest2ID" value="sports"><br>
+                        <label for="friendInterest3ID">Outdoors Activities</label>
+                        <input type="checkbox" name="friendInterest3" id="friendInterest3ID" value="outdoors"><br>
+                        <label for="friendInterest4ID">Socializing</label>
+                        <input type="checkbox" name="friendInterest4" id="friendInterest4ID" value="socializing"><br>
+                </form>
+
+                <!-- Yes, this label just kind of floats off to the side, but it made sense for me. Also the title attribute to save space is used here. -->
+                <label id="friendGradeLabelID" title="Round to the nearest option, ex: a 3.8 is a 4.0">Current GPA: </label>
+                <!-- Radio buttons for the grade selection. -->
+                <input type="radio" value="4.0" name="friendGrade" id="friendGrade40ID">4.0
+                <input type="radio" value="3.5" name="friendGrade" id="friendGrade35ID">3.5
+                <input type="radio" value="3.0" name="friendGrade" id="friendGrade30ID">3.0
+                <input type="radio" value="2.5" name="friendGrade" id="friendGrade25ID">2.5
+                <input type="radio" value="2.0" name="friendGrade"
+                id="friendGrade20ID">2.0
+                <input type="radio" value="low" name="friendGrade" id="friendGradeLowID">Below 2.0
+
+            </form>
+            <br><br>
+            <!-- Submit button! -->
+            <button type="submit" id="submitBtnID">Submit</button>
+        </body>
+    </body>
+
+    <footer id="footer"></footer>
+
+</html>
